@@ -3,14 +3,25 @@ import { useState, useEffect, Children } from 'react';
 import useCalendar from '../hooks/useCalendar'
 export default function Calendar(props) {
 
-    var cal = useCalendar()
+    const date = new Date( new Date().getFullYear(),1,0 );
+    var cal = useCalendar(date.getMonth())
+   
     // const rows = cal.arrDays.map((current) => {
     //    return <td>{current}</td>
     // })
+  function creteTable(){
+    cal.getMonth()
+      const list = cal.currentmonth.arrDays.map((element, index, arr) => {
+            for(let countX = 0; countX < arr[index].length; countX++ ){
+                     arr[index][countX] 
+            }
+      })
+  }
+
 
   return ( 
    <div className="calendar">
-      <Mes mes={mes}/>
+      {/* <Mes mes={mes}/> */}
       <table className="table-calender">
         <thead>
           <tr>
@@ -26,9 +37,6 @@ export default function Calendar(props) {
         <tbody>
           {/* Criar um loop no dia da semana aqui */}
         
-          <tr>
-            {rows}
-          </tr>
           
         </tbody>
       </table>
