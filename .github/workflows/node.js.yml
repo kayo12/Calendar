@@ -31,6 +31,6 @@ jobs:
     - run: npm test
     
     - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
           folder: build # The folder the action should deploy.
