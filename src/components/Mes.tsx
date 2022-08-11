@@ -14,7 +14,7 @@ export default function Mes(props?: MesAno) {
     "Maio",
     "Junho",
     "Julho",
-    "Augosto",
+    "Agosto",
     "Setembro",
     "Outubro",
     "Novembro",

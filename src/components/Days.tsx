@@ -36,7 +36,6 @@ export default function Days(props) {
       {month.map((week) => (
         <div key={week} className="week">
           {week.map((d) =>
-
             d.format("DD") + "" + d._d.getMonth() ===
             d.format("DD") + "" + props.k ? (
               <span className="green" key={d._d.getDate() + "" + props.k}>

@@ -3,7 +3,7 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 
 export default function Calendar(props) {
 
-  const [year, setYear] = useState("2022");
+  const [year, setYear] = useState("");
 
   useEffect(() => {
     OnChangeYear();
