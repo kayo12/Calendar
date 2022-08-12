@@ -105,7 +105,8 @@ font-size: 1.4rem;
 
 
 .inputYear input::placeholder {
-  color:rgb(235, 13, 13);
+  color:rgba(255, 255, 255, 0.957);
+  opacity: 0.5;
 }
 
 .inputYear .btnSearch {

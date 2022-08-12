@@ -2,7 +2,7 @@ import Mes from "./Mes";
 import { useEffect, useState, useSyncExternalStore } from "react";
 
 export default function Calendar(props) {
-  const [year, setYear] = useState(2022);
+  const [year, setYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
     OnChangeYear();
@@ -22,11 +22,11 @@ export default function Calendar(props) {
   return (
     <div className="calendar">
       <div className="inputYear">
-        <input type="text" id="year" className="year" required />
+        <input type="text" id="year" className="year" placeholder="Digite apenas o ano desejado Ex: 2025"/>
         <button
           className="btnSearch"
           onClick={OnChangeYear}
-          placeholder="Ex: 2025"
+
         >
           Buscar
         </button>
