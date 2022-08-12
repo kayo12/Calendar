@@ -48,22 +48,31 @@ font-size: 1.4rem;
   flex-direction: column;
   background-color: #242424;
   border: 3px solid #59c631;
-  width: 350px;
-  height: 350px;
+  width: 380px;
+  height: 380px;
   padding: 10px;
 }
-
+.dayWeek,
 .week{
     display: flex;
     justify-content: space-around;
 
 }
 
+.dayW{
+  padding: 0 1.12rem;
+  font-size: 1rem;
+  color: white;
+  width: 10%;
+}
+
+
+
 .green{
     display: block;
-    padding: 0.9rem;
+    padding: 0.87rem;
     font-size: 1rem;
-    color: #98ef78;
+    color: #8dfe4f;
     width: 10%;
 }
 
@@ -71,9 +80,10 @@ font-size: 1.4rem;
   display: block;
   padding: 0.9rem;
   font-size: 1rem;
-  color: #578c43;
+  color: #5c7054;
   width: 10%;
 }
+
 
 
 .displayyear,
@@ -111,5 +121,6 @@ font-size: 1.4rem;
 .displayyear label{
   font-size: 3rem;  
   font-weight: 800;
-  color: #259a2e;
+  color: #4aae53;
 }
+

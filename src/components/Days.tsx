@@ -7,16 +7,17 @@ export default function Days(props) {
   const [date, setDate] = useState(
     Moment().locale("pt").month(props.k).year(props.y)
   );
-
+ 
   useEffect(() => {
+    console.log(`Valor antes do set props.y => ${props.y}`)
+    setDate(date.year(props.y));
+    console.log(`Valor depois do set props.y => ${props.y}`)
     let firstDay = date.clone().startOf("month").startOf("week");
     let endDay = date.clone().endOf("month").endOf("week");
     let Day = firstDay.clone().subtract(1, "day");
     console.log(`Primeiro dia do mes ${firstDay}`);
     console.log(`ultimo dia do mes ${endDay}`);
-
     let arrayUpdate = [];
-
     while (Day.isBefore(endDay, "day")) {
       arrayUpdate.push(
         Array(7)
@@ -26,8 +27,6 @@ export default function Days(props) {
     }
 
     setMonth(arrayUpdate);
-    setDate(date.year(props.y));
-
     console.log(date);
   }, [date, props.y]);
 
@@ -38,11 +37,11 @@ export default function Days(props) {
           {week.map((d) =>
             d.format("DD") + "" + d._d.getMonth() ===
             d.format("DD") + "" + props.k ? (
-              <span className="green" key={d._d.getDate() + "" + props.k}>
+              <span className="green" key={d._d.getDate() + " " + props.k}>
                 {d.format("DD").toString()}
               </span>
             ) : (
-              <span className="gray" key={d._d.getDate() + "" + props.k}>
+              <span className="gray" key={d._d.getDate() + " " + props.k}>
                 {d.format("DD").toString()}
               </span>
             )

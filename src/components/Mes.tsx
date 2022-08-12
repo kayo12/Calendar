@@ -1,11 +1,14 @@
 import Days from "./Days";
 
-interface MesAno {
-  mes?: number | string ;
-  ano?: number ;
+interface Mesanoss {
+  mes?: number | string;
+  anos?: number;
   horario?: number;
 }
-export default function Mes(props?: MesAno) {
+export default function Mes(props?: Mesanoss) {
+
+  const dayWeek = ["D", "S", "T", "Q", "Q", "S", "S"];
+
   let month = [
     "Janeiro",
     "Fevereiro",
@@ -22,14 +25,21 @@ export default function Mes(props?: MesAno) {
   ];
   return (
     <div className="container">
-        {month.map((current, index) => (
-          <div className="Months">
-              <span className="currentMonth" key={current}>
-                {current}
+      {month.map((current, index) => (
+        <div className="Months">
+          <span className="currentMonth" key={current}>
+            {current}
+          </span>
+          <div className="dayWeek">
+            {dayWeek.map((dWeek) => (
+              <span key={dWeek} className="dayW">
+                {dWeek}
               </span>
-              <Days k={index} m={current} y={props.ano}/>
+            ))}
           </div>
-        ))}
+          <Days k={index} m={current} y={props.anos} />
+        </div>
+      ))}
     </div>
   );
 }
