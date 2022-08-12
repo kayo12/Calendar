@@ -119,9 +119,16 @@ font-size: 1.4rem;
   cursor: pointer;
 }
 
-.displayyear label{
+#year-label{
   font-size: 3rem;  
   font-weight: 800;
   color: #4aae53;
 }
+
+#msg-label{
+  font-size: 1.5rem;  
+  font-weight: 800;
+  color: #4aae53;
+}
+
 
