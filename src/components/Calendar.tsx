@@ -11,10 +11,11 @@ export default function Calendar(props) {
   }, [year,msg]);
 
   function OnChangeYear() {
-    const Regex = new RegExp("[^0-9]{4}", "g");
+  
     try {
       let ye = (document.getElementById("year") as HTMLInputElement).value;
-      if (Regex.test(ye)) {
+
+      if (Number(ye) < 0) {
         setMsg("Por favor, insira um valor valido Ex: 2025");
         setYear(this.date);
       }else{
@@ -31,10 +32,9 @@ export default function Calendar(props) {
     <div className="calendar">
       <div className="inputYear">
         <input
-          type="text"
+          type="number"
           id="year"
           className="year"
-          pattern="/[0-9]{4}/"
           placeholder="Digite apenas o ano desejado Ex: 2025"
         />
         <button className="btnSearch" onClick={OnChangeYear}>
